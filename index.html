@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Crop & Fertilizer Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h1 id="pageTitle">🌱 Smart Crop & Fertilizer Predictor</h1>
+      <div class="lang-select">
+        <label id="langLabel" for="language">Select Language:</label>
+        <select id="language" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="te">తెలుగు (Telugu)</option>
+          <option value="hi">हिन्दी (Hindi)</option>
+          <option value="ta">தமிழ் (Tamil)</option>
+        </select>
+      </div>
+    </div>
+    <hr />
+
+    <form id="cropForm" class="grid-form">
+      <div>
+        <label id="nLabel" for="n">Nitrogen (N) Ratio</label>
+        <input type="number" id="n" value="90" />
+      </div>
+      <div>
+        <label id="pLabel" for="p">Phosphorus (P) Ratio</label>
+        <input type="number" id="p" value="42" />
+      </div>
+      <div>
+        <label id="kLabel" for="k">Potassium (K) Ratio</label>
+        <input type="number" id="k" value="43" />
+      </div>
+      <div>
+        <label id="tempLabel" for="temp">Temperature (°C)</label>
+        <input type="number" id="temp" value="25" />
+      </div>
+      <div>
+        <label id="humLabel" for="hum">Humidity (%)</label>
+        <input type="number" id="hum" value="80" />
+      </div>
+      <div>
+        <label id="phLabel" for="ph">pH Value</label>
+        <input type="number" id="ph" value="6.5" />
+      </div>
+      <div>
+        <label id="rainLabel" for="rain">Rainfall (mm/month)</label>
+        <input type="number" id="rain" value="200" />
+      </div>
+    </form>
+
+    <button type="button" onclick="predictCrop()" id="predictBtn">Predict Crop & Fertilizer</button>
+
+    <div id="result-container" style="display:none;">
+      <h2 id="resultHeading">Prediction Results</h2>
+
+      <div class="result-card">
+        <h3 id="cropCardTitle">🌾 Predicted Crop:</h3>
+        <p id="predictedCrop"></p>
+      </div>
+
+      <div class="result-card">
+        <h3 id="fertilizerCardTitle">🧪 Fertilizer Recommendation:</h3>
+        <p id="fertilizerRec"></p>
+      </div>
+
+      <div class="result-card">
+        <h3 id="reasonCardTitle">💡 Reason for Prediction:</h3>
+        <p id="predictionReason"></p>
+      </div>
+
+      <div class="result-card">
+        <h3 id="otherCropsCardTitle">📊 Other Suitable Crops:</h3>
+        <p id="otherCrops"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
